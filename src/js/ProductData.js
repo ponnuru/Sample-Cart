@@ -3,7 +3,8 @@ module.exports = {
     localStorage.clear();
     localStorage.setItem('product', JSON.stringify([
         {
-        
+         name: 'smartPhone',
+         description: 'MOTOROLA MOBILE PHONE ',
        
           variants: [
             {

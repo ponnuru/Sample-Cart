@@ -11,6 +11,7 @@ var Cart = React.createClass({
   }, 
   render: function(){
     var product = this.props.product;
+      var variants = this.props.product.variants;
     var total = 0;
     var cartItems = this.props.cartItems.map(function (cartItem, index) {
       var subtotal = cartItem.quantity * cartItem.price;
@@ -18,6 +19,9 @@ var Cart = React.createClass({
       return (
         <div key={cartItem.sku} className="item-summary">
           <h4>{cartItem.type} x {cartItem.quantity} = ${subtotal.toFixed(2)}</h4>
+           <h4>{cartItem.name}</h4>
+            <p>{cartItem.description}</p>
+
           <RemoveFromCart index={index} />
         </div>  
       )

@@ -9,6 +9,7 @@ var AddToCart = React.createClass({
   },
   render: function(){
     var selected = this.props.selected;
+    
     return (
       <button disabled= {selected.inventory > 0 ? '' : 'disabled'} className={selected.inventory > 0 ? '' : 'disabledBtn'} onClick={this.handleClick}>{selected.inventory > 0 ? 'ADD TO CART' : 'SOLD OUT'}</button>
     );

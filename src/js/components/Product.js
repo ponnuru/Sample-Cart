@@ -8,10 +8,10 @@ var Product = React.createClass({
   },
   render: function(){
     var product = this.props.product;
-    var variants = this.props.product.variants;
-    console.log("product");
-    console.log(product.variants);
     var selected = this.props.selected;
+    var variants = this.props.product.variants;
+    console.log("product js...");
+    console.log(variants);
     var options = product.variants.map(function (variant, index) {
       return (
         <option key={index} value={index}>{variant.type}</option>
@@ -19,23 +19,27 @@ var Product = React.createClass({
     });
     return (
 
-     <div className="col-sm-6 product">
-        <div className="product-image">
-          <img src={"/src/img/" + selected.image}/>
-        </div>
-        <div className="product-details">
-          <h2>{selected.name}</h2>
-          <p>{selected.description}</p>
-          <h3>Price: ${selected.price}</h3>
-          <h4>Inventory: {selected.inventory}</h4>
-          <select onChange={this.updateSelected}>
-            {options}
-          </select>
-          <AddToCart selected={selected} product={product}/>
-        </div>
-      </div>
-
-
+     <div>
+                {
+                    variants.map(function (variant) {
+                        return (
+                       <div className="col-sm-6 product">
+                        <div className="product-image">
+                          <img src={"/src/img/" + variant.image}/>
+                        </div>
+                        <div className="product-details">
+                          <h2>{variant.name}</h2>
+                          <p>{variant.description}</p>
+                          <h3>Price: ${variant.price}</h3>
+                          <h4>Inventory: {variant.inventory}</h4>
+                         
+                          <AddToCart selected={variant} product={product}/>
+                        </div>
+                      </div>
+                        );
+                    })
+                }
+            </div>
     );
   }
 });
