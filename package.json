@@ -46,11 +46,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/huy-tran/Sample-Cart.git"
+    "url": "https://github.com/ponnuru/Sample-Cart"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/huy-tran/Sample-Cart.git/issues"
+    "url": "https://github.com/ponnuru/Sample-Cart/issues"
   },
-  "homepage": "https://github.com/huy-tran/Sample-Cart.git#readme"
+  "homepage": "https://github.com/ponnuru/Sample-Cart.git#readme"
 }
